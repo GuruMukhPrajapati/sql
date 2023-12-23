@@ -99,7 +99,7 @@ SELECT * FROM emp WHERE dep_id = 10;
 #### 14. Display all the employees name along with their jobs.
 #### 15. Display all the employees having ‘A’ in their names.
 #### 16. Display all the employees having T and ‘R’ in their names.
-#### 17. Display employees that are not there in department 30.
+#### 17. Display employees that are not there in department 30. not
 #### 18. Display Department located in ‘xxx’.
 #### 19. Display all the employees who are not ‘SALESMAN’ or ‘CLERK’.
 #### 20. Display all the employees Names in lowercase.
