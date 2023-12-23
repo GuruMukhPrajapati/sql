@@ -30,7 +30,7 @@ INSERT INTO emp VALUES
 (10, 'IT', 'Mumbai', 101, 'ram Kumar', 'Software Engineer', 201, 13000.00, NULL, '2023-01-15'),
 (20, 'IT', 'Mumbai', 102, 'Priya Sharma', 'Software Engineer', 201, 70000.00, NULL, '2001-02-20'),
 (30, 'HR', 'Delhi', 103, 'Rahul Singh', 'HR Manager', NULL, 80000.00, 5000.00, '2023-03-10'),
-(40, 'HR', 'Delhi', 104, 'Ananya Gupta', 'ANAYLST', 103, 55000.00, NULL, '2023-04-05'),
+(40, 'HR', 'Delhi', 104, 'Ananya Gupta', 'Analyst', 103, 55000.00, NULL, '2023-04-05'),
 (50, 'Finance', 'Bangalore', 105, 'Rajesh Patel', 'Manager', 301, 80000.00, 3000.00, '2023-05-12'),
 (60, 'Marketing', 'Chennai', 106, 'Neha Kapoor', 'Manager', 302, 60000.00, 2000.00, '2023-06-25'),
 (70, 'Admin', 'Pune', 107, 'Vikram Joshi', 'Clerk', 7698, 50000.00, NULL, '2023-07-10');
