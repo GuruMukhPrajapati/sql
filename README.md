@@ -7,7 +7,7 @@
 #### Question 2. use database 
 
 ```sql
-> USE DATABASE ems;
+> use ems;
 ```
 #### Question 3. Create table emp and instert records 
 
