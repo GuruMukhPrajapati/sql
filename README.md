@@ -142,7 +142,7 @@ INSERT INTO emp VALUES
 
 #### Question 11. Display employees whose name begins with Character ‘R’.
 ```sql
-SELECT Name FROM emp  WHERE Name LIKE 'R%';
+> SELECT Name FROM emp  WHERE Name LIKE 'R%';
 +--------------+
 | Name         |
 +--------------+
@@ -155,7 +155,7 @@ SELECT Name FROM emp  WHERE Name LIKE 'R%';
 
 #### Question 12. Display employees that are analyst but getting salary greater than 10000.
 ```sql
-SELECT Name,Salary FROM emp WHERE Job = 'analyst' AND Salary > 10000.00;
+> SELECT Name,Salary FROM emp WHERE Job = 'analyst' AND Salary > 10000.00;
 +--------------+----------+
 | Name         | Salary   |
 +--------------+----------+
@@ -167,7 +167,7 @@ SELECT Name,Salary FROM emp WHERE Job = 'analyst' AND Salary > 10000.00;
 
 #### Question 13. Display employees those are not getting any commission.
 ```sql
-SELECT Name , Commission FROM emp WHERE Commission IS NULL;
+> SELECT Name , Commission FROM emp WHERE Commission IS NULL;
 +--------------+------------+
 | Name         | Commission |
 +--------------+------------+
@@ -182,8 +182,8 @@ SELECT Name , Commission FROM emp WHERE Commission IS NULL;
 
 #### Question 14. Display all the employees name along with their jobs.
 ```sql
-SELECT Name, Job
- FROM emp;
+> SELECT Name, Job
+  FROM emp;
 +--------------+-------------------+
 | Name         | Job               |
 +--------------+-------------------+
@@ -200,7 +200,7 @@ SELECT Name, Job
 
 #### Question 15. Display all the employees having ‘A’ in their names.
 ```sql
-SELECT Name FROM emp WHERE Name LIKE '%A%';
+> SELECT Name FROM emp WHERE Name LIKE '%A%';
 +--------------+
 | Name         |
 +--------------+
@@ -217,7 +217,7 @@ SELECT Name FROM emp WHERE Name LIKE '%A%';
 
 #### Question 16. Display all the employees having T and ‘R’ in their names.
 ```sql
-SELECT Name
+> SELECT Name
 FROM emp
 WHERE Name LIKE '%T%' AND Name LIKE '%R%';
 --------------+
@@ -229,7 +229,7 @@ WHERE Name LIKE '%T%' AND Name LIKE '%R%';
 ```
 #### Question 17. Display Department located in ‘pune’.
 ```sql
-SELECT dep_name , Location 
+> SELECT dep_name , Location 
 FROM emp
 WHERE Location = 'Pune';
 +----------+----------+
@@ -241,7 +241,7 @@ WHERE Location = 'Pune';
 
 #### Question 18. Display all the employees who are not ‘SALESMAN’ or ‘CLERK’.
 ```sql
-SELECT Name , Job 
+> SELECT Name , Job 
 FROM emp
 WHERE Job NOT IN ('SALESMAN', 'CLERK');
 +--------------+-------------------+
@@ -259,7 +259,7 @@ WHERE Job NOT IN ('SALESMAN', 'CLERK');
 
 #### Question 19. Display all the employees Names in lowercase.
 ```sql
-SELECT LOWER(Name) AS LowercaseName
+> SELECT LOWER(Name) AS LowercaseName
 FROM emp;
 +---------------+
 | LowercaseName |
@@ -277,7 +277,7 @@ FROM emp;
 
 #### Question 20. Display all employees name with their length.
 ```sql
-SELECT Name, LENGTH(Name) AS NameLength
+> SELECT Name, LENGTH(Name) AS NameLength
 FROM emp;
 +--------------+------------+
 | Name         | NameLength |
