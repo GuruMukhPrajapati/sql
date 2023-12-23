@@ -134,7 +134,7 @@ INSERT INTO emp VALUES
 |    101 | ram Kumar    | Software Engineer |
 |    102 | Priya Sharma | Software Engineer |
 |    103 | Rahul Singh  | HR Manager        |
-|    104 | Ananya Gupta | ANAYLST           |
+|    104 | Ananya Gupta | Analyst           |
 |    107 | Vikram Joshi | Clerk             |
 +--------+--------------+-------------------+
 
