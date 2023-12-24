@@ -17,7 +17,7 @@
     dep_id INT,
     dep_name VARCHAR(50),
     Location VARCHAR(50),
-    emp_id INT PRIMARY KEY,
+    emp_id INT ,
     Name VARCHAR(255),
     Job VARCHAR(50),
     ManagerID INT,
@@ -369,4 +369,23 @@ SELECT
 +-------------------+-----------+-----------+
 
 ```
-#### Question > 
+# ROW WORK > WORK IN PROGRESS
+```sql
+-- ADD MAX AND MIN SALARY COLUMN CODE 
+-- Add columns to the existing table
+ALTER TABLE emp
+ADD COLUMN max_sal DECIMAL(10, 2),
+ADD COLUMN min_sal DECIMAL(10, 2);
+
+-- Insert records into max_sal and min_sal columns (FOR EMS DATA BASE NOT )
+UPDATE emp SET max_sal = 50000.00, min_sal = 12000.00 WHERE emp_id = 101;
+UPDATE emp SET max_sal = 80000.00, min_sal = 60000.00 WHERE emp_id = 102;
+UPDATE emp SET max_sal = 85000.00, min_sal = 75000.00 WHERE emp_id = 103;
+UPDATE emp SET max_sal = 75000.00, min_sal = 60000.00 WHERE emp_id = 104;
+UPDATE emp SET max_sal = 85000.00, min_sal = 80000.00 WHERE emp_id = 105;
+UPDATE emp SET max_sal = 70000.00, min_sal = 60000.00 WHERE emp_id = 106;
+UPDATE emp SET max_sal = 95000.00, min_sal = 45000.00 WHERE emp_id = 107;
+
+
+```
+
