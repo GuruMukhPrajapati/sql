@@ -293,5 +293,80 @@ FROM emp;
 ```
 
 
+#### Question >  Write a query to calculate the length of time any employee has been with the company.
+```sql
+    SELECT
+    emp_id,
+    Name,
+    DATEDIFF(CURDATE(), HireDate) AS DaysWithCompany
+    FROM
+    emp;
++--------+--------------+-----------------+
+| emp_id | Name         | DaysWithCompany |
++--------+--------------+-----------------+
+|    101 | ram Kumar    |             343 |
+|    102 | Priya Sharma |            8342 |
+|    103 | Rahul Singh  |             289 |
+|    104 | Ananya Gupta |             263 |
+|    105 | Rajesh Patel |             226 |
+|    106 | Neha Kapoor  |             182 |
+|    107 | Vikram Joshi |             167 |
++--------+--------------+-----------------+
 
+```
+#### Question > List the employee name and salary increased by 15% and expressed as a whole number.  
+```sql
+> SELECT
+Name,
+ROUND(Salary * 1.15) AS IncreasedSalary
+FROM
+emp;
++--------------+-----------------+
+| Name         | IncreasedSalary |
++--------------+-----------------+
+| ram Kumar    |           14950 |
+| Priya Sharma |           80500 |
+| Rahul Singh  |           92000 |
+| Ananya Gupta |           63250 |
+| Rajesh Patel |           92000 |
+| Neha Kapoor  |           69000 |
+| Vikram Joshi |           57500 |
++--------------+-----------------+
+```
+#### Question > List all the employees who joined after ’01-jan-2000’ and before 18-aug-2005.
+```sql
+SELECT Name,HireDate,Dep_id,Salary FROM emp WHERE HireDate > '2000-01-01' AND HireDate < '2005-08-18';
++--------------+------------+--------+----------+
+| Name         | HireDate   | Dep_id | Salary   |
++--------------+------------+--------+----------+
+| Priya Sharma | 2001-02-20 |     20 | 70000.00 |
++--------------+------------+--------+----------+
 
+```
+
+#### Question > Display the difference between Highest and the lowest salary for each department.
+```sql
+```
+#### Question > Display Minimum and Maximum salary for each job type.
+
+```sql
+SELECT
+    ->     Job,
+    ->     MIN(Salary) AS MinSalary,
+    ->     MAX(Salary) AS MaxSalary
+    -> FROM
+    ->     emp
+    -> GROUP BY
+    ->     Job;
++-------------------+-----------+-----------+
+| Job               | MinSalary | MaxSalary |
++-------------------+-----------+-----------+
+| analyst           |  55000.00 |  55000.00 |
+| Clerk             |  50000.00 |  50000.00 |
+| HR Manager        |  80000.00 |  80000.00 |
+| Manager           |  60000.00 |  80000.00 |
+| Software Engineer |  13000.00 |  70000.00 |
++-------------------+-----------+-----------+
+
+```
+#### Question > 
