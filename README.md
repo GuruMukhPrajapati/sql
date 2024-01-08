@@ -352,23 +352,41 @@ SELECT Name,HireDate,Dep_id,Salary FROM emp WHERE HireDate > '2000-01-01' AND Hi
 ```sql
 SELECT
     ->     Job,
-    ->     MIN(Salary) AS MinSalary,
-    ->     MAX(Salary) AS MaxSalary
+    ->     MIN(min_sal),
+    ->     MAX(max_sal)
     -> FROM
     ->     emp
     -> GROUP BY
     ->     Job;
-+-------------------+-----------+-----------+
-| Job               | MinSalary | MaxSalary |
-+-------------------+-----------+-----------+
-| analyst           |  55000.00 |  55000.00 |
-| Clerk             |  50000.00 |  50000.00 |
-| HR Manager        |  80000.00 |  80000.00 |
-| Manager           |  60000.00 |  80000.00 |
-| Software Engineer |  13000.00 |  70000.00 |
-+-------------------+-----------+-----------+
++-------------------+--------------+--------------+
+| Job               | MIN(min_sal) | MAX(max_sal) |
++-------------------+--------------+--------------+
+| Analyst           |     60000.00 |     75000.00 |
+| Clerk             |     85000.00 |     95000.00 |
+| HR Manager        |     75000.00 |     85000.00 |
+| Manager           |     60000.00 |     85000.00 |
+| Software Engineer |     12000.00 |     80000.00 |
++-------------------+--------------+--------------+
+```
+#### que > Display employees who earn more than lowest salary of department 30.
+```sql
+
+ SELECT
+    ->     *
+    -> FROM
+    ->     emp
+    -> WHERE
+    ->     Salary > (SELECT MIN(min_sal) FROM emp WHERE dep_id = 30);
++--------+----------+-----------+--------+--------------+------------+-----------+----------+------------+------------+----------+----------+
+| dep_id | dep_name | Location  | emp_id | Name         | Job        | ManagerID | Salary   | Commission | HireDate   | max_sal  | min_sal  |
++--------+----------+-----------+--------+--------------+------------+-----------+----------+------------+------------+----------+----------+
+|     30 | HR       | Delhi     |    103 | Rahul Singh  | HR Manager |      NULL | 80000.00 |    5000.00 | 2023-03-10 | 85000.00 | 75000.00 |
+|     50 | Finance  | Bangalore |    105 | Rajesh Patel | Manager    |       301 | 80000.00 |    3000.00 | 2023-05-12 | 85000.00 | 80000.00 |
++--------+----------+-----------+--------+--------------+------------+-----------+----------+------------+------------+----------+----------+
+2 rows in set (0.000 sec)
 
 ```
+
 # ROW WORK > WORK IN PROGRESS
 ```sql
 -- ADD MAX AND MIN SALARY COLUMN CODE 
