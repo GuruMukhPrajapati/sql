@@ -380,7 +380,27 @@ select * from emp;
 ```sql
 !! CONFUSED !!
 ```
-#### Question > Display Minimum and Maximum salary for each job type.
+
+#### que 25 > List all jobs for MANAGER and difference between Average and maximum salary.
+```sql
+SELECT
+    ->     Job,
+    ->     MAX(Salary) AS Max_Salary,
+    ->     AVG(Salary) AS Avg_Salary,
+    ->     AVG(Salary) - MAX(Salary) AS Salary_Difference
+    -> FROM
+    ->     emp
+    -> WHERE
+    ->     Job = 'MANAGER'
+    -> GROUP BY
+    ->     Job;
++---------+------------+--------------+-------------------+
+| Job     | Max_Salary | Avg_Salary   | Salary_Difference |
++---------+------------+--------------+-------------------+
+| Manager |   80000.00 | 70000.000000 |     -10000.000000 |
++---------+------------+--------------+-------------------+
+```
+#### Question 26.> Display Minimum and Maximum salary for each job type.
 
 ```sql
 SELECT
@@ -401,7 +421,7 @@ SELECT
 | Software Engineer |     12000.00 |     80000.00 |
 +-------------------+--------------+--------------+
 ```
-#### que 25.> Display employees who earn more than lowest salary of department 30.
+#### que 27.> Display employees who earn more than lowest salary of department 30.
 ```sql
 
  SELECT
@@ -419,7 +439,7 @@ SELECT
 2 rows in set (0.000 sec)
 
 ```
-#### que 26 > Display all the employees who do not manage anyone.
+#### que 28 > Display all the employees who do not manage anyone.
 ```sql
 SELECT
     ->      Name , ManagerID
@@ -435,7 +455,7 @@ SELECT
 
 ```
 
-#### que 27. > Find all the employees who have the same job as ‘RAM’.
+#### que 29. > Find all the employees who have the same job as ‘RAM’.
 
 ```sql
 SELECT
@@ -455,7 +475,7 @@ SELECT
 
 
 ```
-#### que 28 > Display all the employees who working in same department on same post where SMITH is working.
+#### que 30 > Display all the employees who working in same department on same post where SMITH is working.
 
 ```sql
 SELECT
