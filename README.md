@@ -293,7 +293,7 @@ FROM emp;
 ```
 
 
-#### Question >  Write a query to calculate the length of time any employee has been with the company.
+#### Question 21.>  Write a query to calculate the length of time any employee has been with the company.
 ```sql
     SELECT
     emp_id,
@@ -314,7 +314,7 @@ FROM emp;
 +--------+--------------+-----------------+
 
 ```
-#### Question > List the employee name and salary increased by 15% and expressed as a whole number.  
+#### Question 22.> List the employee name and salary increased by 15% and expressed as a whole number.  
 ```sql
 > SELECT
 Name,
@@ -333,7 +333,7 @@ emp;
 | Vikram Joshi |           57500 |
 +--------------+-----------------+
 ```
-#### Question > List all the employees who joined after ’01-jan-2000’ and before 18-aug-2005.
+#### Question 23 .> List all the employees who joined after ’01-jan-2000’ and before 18-aug-2005.
 ```sql
 SELECT Name,HireDate,Dep_id,Salary FROM emp WHERE HireDate > '2000-01-01' AND HireDate < '2005-08-18';
 +--------------+------------+--------+----------+
@@ -376,7 +376,7 @@ select * from emp;
 +--------+-----------+-----------+--------+--------------+-------------------+-----------+----------+------------+------------+----------+----------+
 
 ```
-#### Question > Display the difference between Highest and the lowest salary for each department.
+#### Question 24. > Display the difference between Highest and the lowest salary for each department.
 ```sql
 !! CONFUSED !!
 ```
@@ -401,7 +401,7 @@ SELECT
 | Software Engineer |     12000.00 |     80000.00 |
 +-------------------+--------------+--------------+
 ```
-#### que > Display employees who earn more than lowest salary of department 30.
+#### que 25.> Display employees who earn more than lowest salary of department 30.
 ```sql
 
  SELECT
@@ -419,7 +419,7 @@ SELECT
 2 rows in set (0.000 sec)
 
 ```
-#### que > Display all the employees who do not manage anyone.
+#### que 26 > Display all the employees who do not manage anyone.
 ```sql
 SELECT
     ->      Name , ManagerID
@@ -435,7 +435,7 @@ SELECT
 
 ```
 
-#### que > Find all the employees who have the same job as ‘RAM’.
+#### que 27. > Find all the employees who have the same job as ‘RAM’.
 
 ```sql
 SELECT
@@ -455,7 +455,7 @@ SELECT
 
 
 ```
-#### que > Display all the employees who working in same department on same post where SMITH is working.
+#### que 28 > Display all the employees who working in same department on same post where SMITH is working.
 
 ```sql
 SELECT
