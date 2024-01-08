@@ -343,9 +343,42 @@ SELECT Name,HireDate,Dep_id,Salary FROM emp WHERE HireDate > '2000-01-01' AND Hi
 +--------------+------------+--------+----------+
 
 ```
+# DO IT BERFOR THE NEXT QUESTION : 
+```sql
+-- ADD MAX AND MIN SALARY COLUMN to the existing table and insert a single record for given question no __
 
+ALTER TABLE emp
+ADD COLUMN max_sal DECIMAL(10, 2),
+ADD COLUMN min_sal DECIMAL(10, 2);
+
+-- updating records into max_sal and min_sal columns (FOR EMS BASE NOT )
+UPDATE emp SET max_sal = 50000.00, min_sal = 12000.00 WHERE emp_id = 101;
+UPDATE emp SET max_sal = 80000.00, min_sal = 60000.00 WHERE emp_id = 102;
+UPDATE emp SET max_sal = 85000.00, min_sal = 75000.00 WHERE emp_id = 103;
+UPDATE emp SET max_sal = 75000.00, min_sal = 60000.00 WHERE emp_id = 104;
+UPDATE emp SET max_sal = 85000.00, min_sal = 80000.00 WHERE emp_id = 105;
+UPDATE emp SET max_sal = 70000.00, min_sal = 60000.00 WHERE emp_id = 106;
+UPDATE emp SET max_sal = 95000.00, min_sal = 45000.00 WHERE emp_id = 107;
+INSERT INTO emp VALUES (10, 'IT', 'Mumbai', 108, 'Smith', 'Software Engineer', 201, 75000.00, NULL, '2023-08-15', 80000.00, 70000.00);
+select * from emp;
+
++--------+-----------+-----------+--------+--------------+-------------------+-----------+----------+------------+------------+----------+----------+
+| dep_id | dep_name  | Location  | emp_id | Name         | Job               | ManagerID | Salary   | Commission | HireDate   | max_sal  | min_sal  |
++--------+-----------+-----------+--------+--------------+-------------------+-----------+----------+------------+------------+----------+----------+
+|     10 | IT        | Mumbai    |    101 | ram Kumar    | Software Engineer |       201 | 13000.00 |       NULL | 2023-01-15 | 50000.00 | 12000.00 |
+|     20 | IT        | Mumbai    |    102 | Priya Sharma | Software Engineer |       201 | 70000.00 |       NULL | 2001-02-20 | 80000.00 | 60000.00 |
+|     30 | HR        | Delhi     |    103 | Rahul Singh  | HR Manager        |      NULL | 80000.00 |    5000.00 | 2023-03-10 | 85000.00 | 75000.00 |
+|     40 | HR        | Delhi     |    104 | Ananya Gupta | Analyst           |       103 | 55000.00 |       NULL | 2023-04-05 | 75000.00 | 60000.00 |
+|     50 | Finance   | Bangalore |    105 | Rajesh Patel | Manager           |       301 | 80000.00 |    3000.00 | 2023-05-12 | 85000.00 | 80000.00 |
+|     60 | Marketing | Chennai   |    106 | Neha Kapoor  | Manager           |       302 | 60000.00 |    2000.00 | 2023-06-25 | 70000.00 | 60000.00 |
+|     70 | Admin     | Pune      |    107 | Vikram Joshi | Clerk             |      7698 | 50000.00 |       NULL | 2023-07-10 | 95000.00 | 85000.00 |
+|     10 | IT        | Mumbai    |    108 | Smith        | Software Engineer |       201 | 75000.00 |       NULL | 2023-08-15 | 80000.00 | 70000.00 |
++--------+-----------+-----------+--------+--------------+-------------------+-----------+----------+------------+------------+----------+----------+
+
+```
 #### Question > Display the difference between Highest and the lowest salary for each department.
 ```sql
+!! CONFUSED !!
 ```
 #### Question > Display Minimum and Maximum salary for each job type.
 
@@ -386,24 +419,61 @@ SELECT
 2 rows in set (0.000 sec)
 
 ```
-
-# ROW WORK > WORK IN PROGRESS
+#### que > Display all the employees who do not manage anyone.
 ```sql
--- ADD MAX AND MIN SALARY COLUMN CODE 
--- Add columns to the existing table
-ALTER TABLE emp
-ADD COLUMN max_sal DECIMAL(10, 2),
-ADD COLUMN min_sal DECIMAL(10, 2);
+SELECT
+    ->      Name , ManagerID
+    -> FROM
+    ->     emp
+    ->     WHERE
+    ->     ManagerID IS NULL;
++-------------+-----------+
+| Name        | ManagerID |
++-------------+-----------+
+| Rahul Singh |      NULL |
++-------------+-----------+
 
--- Insert records into max_sal and min_sal columns (FOR EMS DATA BASE NOT )
-UPDATE emp SET max_sal = 50000.00, min_sal = 12000.00 WHERE emp_id = 101;
-UPDATE emp SET max_sal = 80000.00, min_sal = 60000.00 WHERE emp_id = 102;
-UPDATE emp SET max_sal = 85000.00, min_sal = 75000.00 WHERE emp_id = 103;
-UPDATE emp SET max_sal = 75000.00, min_sal = 60000.00 WHERE emp_id = 104;
-UPDATE emp SET max_sal = 85000.00, min_sal = 80000.00 WHERE emp_id = 105;
-UPDATE emp SET max_sal = 70000.00, min_sal = 60000.00 WHERE emp_id = 106;
-UPDATE emp SET max_sal = 95000.00, min_sal = 45000.00 WHERE emp_id = 107;
+```
+
+#### que > Find all the employees who have the same job as ‘RAM’.
+
+```sql
+SELECT
+         name ,Job
+     FROM
+         emp
+     WHERE
+    Job = (SELECT Job FROM emp WHERE Name = 'ram kumar');
+
++--------------+-------------------+
+| name         | Job               |
++--------------+-------------------+
+| ram Kumar    | Software Engineer |
+| Priya Sharma | Software Engineer |
+| Smith        | Software Engineer |
++--------------+-------------------+
 
 
 ```
+#### que > Display all the employees who working in same department on same post where SMITH is working.
+
+```sql
+SELECT
+    dep_id,
+    Name,
+    Job
+FROM
+    emp
+WHERE
+    dep_id = (SELECT dep_id FROM emp WHERE Name = 'Smith')
+    AND Job = (SELECT Job FROM emp WHERE Name = 'Smith');
+
++--------+-----------+-------------------+
+| dep_id | Name      | Job               |
++--------+-----------+-------------------+
+|     10 | ram Kumar | Software Engineer |
+|     10 | Smith     | Software Engineer |
++--------+-----------+-------------------+
+```
+
 
